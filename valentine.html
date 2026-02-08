@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>For Bhagyshree 💖</title>
+  <style>
+    body {
+      height: 100vh;
+      margin: 0;
+      background: linear-gradient(180deg, #0b0033, #1a004d, #330066);
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      font-family: 'Comic Sans MS', cursive;
+      color: white;
+      overflow: hidden;
+      text-align: center;
+    }
+
+    h1 {
+      font-size: 38px;
+      margin-bottom: 10px;
+    }
+
+    h2 {
+      font-size: 22px;
+      margin-bottom: 25px;
+      opacity: 0.9;
+    }
+
+    button {
+      font-size: 22px;
+      padding: 14px 36px;
+      margin: 10px;
+      border-radius: 30px;
+      border: none;
+      cursor: pointer;
+    }
+
+    .yes {
+      background: #ff4d6d;
+      color: white;
+      box-shadow: 0 0 20px rgba(255,77,109,0.6);
+    }
+
+    #no {
+      position: absolute;
+      background: #ccc;
+      color: black;
+    }
+
+    /* Romantic message box */
+    .loveBox {
+      position: fixed;
+      inset: 0;
+      background: rgba(0,0,0,0.6);
+      display: none;
+      justify-content: center;
+      align-items: center;
+      z-index: 10;
+    }
+
+    .loveContent {
+      background: #fff;
+      color: #ff4d6d;
+      padding: 35px;
+      border-radius: 25px;
+      max-width: 400px;
+      text-align: center;
+      font-size: 22px;
+      animation: pop 0.4s ease;
+    }
+
+    @keyframes pop {
+      0% { transform: scale(0.7); }
+      100% { transform: scale(1); }
+    }
+
+    /* Floating hearts */
+    .heart {
+      position: absolute;
+      font-size: 22px;
+      animation: float 6s linear infinite;
+    }
+
+    @keyframes float {
+      from {
+        transform: translateY(100vh);
+        opacity: 1;
+      }
+      to {
+        transform: translateY(-10vh);
+        opacity: 0;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+<h1>🐻💍 Can you be my Valentine?</h1>
+<h2>Forever & Always 🧸✨</h2>
+
+<button class="yes" onclick="showLove()">Yes 😍💖</button>
+<button id="no" onmouseover="moveNo()">No 🙈</button>
+
+<!-- Romantic message -->
+<div class="loveBox" id="loveBox">
+  <div class="loveContent">
+    🧸💍 Yaaaay Bhagyshree! 💖<br><br>
+    I knew it 😍<br>
+    Forever together 🥹✨<br><br>
+    💖💖💖
+  </div>
+</div>
+
+<script>
+  function moveNo() {
+    const btn = document.getElementById("no");
+    btn.style.left = Math.random() * (window.innerWidth - 120) + "px";
+    btn.style.top = Math.random() * (window.innerHeight - 120) + "px";
+  }
+
+  function showLove() {
+    document.getElementById("loveBox").style.display = "flex";
+  }
+
+  // Floating hearts
+  setInterval(() => {
+    const h = document.createElement("div");
+    h.className = "heart";
+    h.innerHTML = "💖";
+    h.style.left = Math.random() * 100 + "vw";
+    h.style.fontSize = (Math.random() * 20 + 15) + "px";
+    document.body.appendChild(h);
+    setTimeout(() => h.remove(), 6000);
+  }, 400);
+</script>
+
+</body>
+</html>
